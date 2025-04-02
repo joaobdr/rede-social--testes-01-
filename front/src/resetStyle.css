@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.container {
+  width: 80rem;
+  margin: 0 auto;
+}
+a,
+img,
+button {
+  display: block;
+}
+img {
+  max-width: 100%;
+}
+body {
+  background-color: #222;
+}
+html {
+  scroll-behavior: smooth;
+}
