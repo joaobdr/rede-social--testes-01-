@@ -3,10 +3,7 @@ import Input from "./Forms/Input";
 import style from "./Login.module.css";
 import React from "react";
 
-const link = "https://musical-cod-4j7rjrp4j6ggf7ppg-3000.app.github.dev/";
-const ts = { mensagem: "mensagem de teste" };
-
-const Login = ({ setLog }) => {
+const Login = ({ setLog, links }) => {
   const [user, setUser] = React.useState("");
   const [senha, setSenha] = React.useState("");
   const [res, setRes] = React.useState("");
@@ -22,13 +19,12 @@ const Login = ({ setLog }) => {
       },
       body: JSON.stringify({ user, senha }),
     };
-    const js = await fetch(link + "api/login", body);
+    const js = await fetch(links.login, body);
     const ts = await js.json();
 
     setRes(ts);
 
     if (ts.login) setLog(true);
-
     return setBtn(false);
   };
 

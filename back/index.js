@@ -20,9 +20,14 @@ app.post("/api/login", (req, res) => {
   return res.status(200).json(ts);
 });
 
-app.get("/", (req, res) => {
-  return res.status(200).json({ msg: "ok" });
+app.post("/api/cadastrar", (req, res) => {
+  const body = req.body;
+  console.log(body);
+
+  return res.status(200).json({ msg: "Usuário cadastrado com sucesso!!" });
 });
+
+app.get("/", (req, res) => res.status(200).json({ msg: "ok" }));
 
 app.listen(port, () => {
   console.log("servidor rodando na porta:");

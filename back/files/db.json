@@ -2,10 +2,11 @@
   {
     "user": "joao256265",
     "senha": "123",
-    "": ""
+    "email": "teste@teste.com"
   },
   {
     "user": "joao",
-    "senha": "teste"
+    "senha": "teste",
+    "email": "teste@teste.com"
   }
 ]
