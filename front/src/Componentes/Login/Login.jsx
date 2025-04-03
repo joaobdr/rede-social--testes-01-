@@ -1,28 +1,35 @@
+import { Link } from "react-router-dom";
 import Input from "./Forms/Input";
 import style from "./Login.module.css";
 import React from "react";
 
-const link = "https://studious-journey-g4qp4pv94px9c9vj7-3000.app.github.dev/";
+const link = "https://musical-cod-4j7rjrp4j6ggf7ppg-3000.app.github.dev/";
 const ts = { mensagem: "mensagem de teste" };
 
 const Login = ({ setLog }) => {
   const [user, setUser] = React.useState("");
   const [senha, setSenha] = React.useState("");
+  const [res, setRes] = React.useState("");
+  const [btn, setBtn] = React.useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    await fetch(link, {
-      Method: "POST",
-      Headers: {
-        Accept: "application.json",
+    setBtn(true);
+    const body = {
+      method: "POST",
+      headers: {
         "Content-Type": "application/json",
       },
-      Body: ts,
-      Cache: "default",
-    })
-      .then((x) => x.json())
-      .then((x) => console.log(x));
+      body: JSON.stringify({ user, senha }),
+    };
+    const js = await fetch(link + "api/login", body);
+    const ts = await js.json();
+
+    setRes(ts);
+
+    if (ts.login) setLog(true);
+
+    return setBtn(false);
   };
 
   return (
@@ -42,11 +49,17 @@ const Login = ({ setLog }) => {
             />
 
             <div className={style.cadastro_e_senha}>
-              <a href="#">Esqueci a senha</a>
-              <a href="#">Quero me cadastrar</a>
+              <Link to="/#">Esqueci a senha</Link>
+              <Link to="/cadastrar">Quero me cadastrar</Link>
             </div>
 
-            <button className={style.btn_form}>Entrar</button>
+            {res ? (
+              <span className={`${style.mensagem_erro}`}>{res.msg}!!</span>
+            ) : null}
+
+            <button className={style.btn_form + ` ${btn ? style.opac : ""}`}>
+              Entrar
+            </button>
           </form>
         </section>
       </main>

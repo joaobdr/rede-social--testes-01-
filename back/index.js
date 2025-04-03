@@ -1,16 +1,23 @@
+const VerificarUsuarios = require("./componentes/verificarUsuarios.js");
 const express = require("express");
+const bodyParser = require("body-parser");
 const cors = require("cors");
+const fs = require("fs");
+const {
+  default: verificarUsuarios,
+} = require("./componentes/verificarUsuarios.js");
+const dados = JSON.parse(fs.readFileSync("files/db.json", "utf8"));
 
 const app = express();
 const port = 3000;
 app.use(cors());
+app.use(bodyParser.json());
 
 app.post("/api/login", (req, res) => {
-  const body = req.body;
+  const { user, senha } = req.body;
+  const ts = verificarUsuarios(dados, user, senha);
 
-  console.log(body);
-
-  return res.status(200).json({ msg: "Login Ok" });
+  return res.status(200).json(ts);
 });
 
 app.get("/", (req, res) => {

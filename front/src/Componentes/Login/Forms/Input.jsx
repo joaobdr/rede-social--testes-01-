@@ -9,6 +9,7 @@ const Input = ({ nome, tipo, valor, setValor }) => {
           name={nome}
           value={valor}
           onChange={(e) => setValor(e.target.value)}
+          required
         />
       </div>
     </>
