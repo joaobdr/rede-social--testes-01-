@@ -2,7 +2,7 @@ import React from "react";
 import Input from "../Login/Forms/Input";
 import style from "./Cadastrar.module.css";
 // nome, tipo, valor, setValor
-const Cadastrar = ({ links }) => {
+const Cadastrar = ({ links, setLog, setInfoUser }) => {
   const [email, setEmail] = React.useState("");
   const [nome, setNome] = React.useState("");
   const [senha, setSenha] = React.useState("");
@@ -26,9 +26,11 @@ const Cadastrar = ({ links }) => {
     const ts = await js.json();
 
     setResp(ts);
-    console.log(resp);
+    setLog(ts.cadastro);
+    setInfoUser(ts.usuario);
   };
 
+  console.log(resp);
   return (
     <main className={style.main}>
       <section className={style.section}>

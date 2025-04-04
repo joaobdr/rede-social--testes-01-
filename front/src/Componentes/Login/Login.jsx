@@ -22,6 +22,8 @@ const Login = ({ setLog, links }) => {
     const js = await fetch(links.login, body);
     const ts = await js.json();
 
+    console.log(body);
+
     setRes(ts);
 
     if (ts.login) setLog(true);

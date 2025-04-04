@@ -1,12 +1,1 @@
-[
-  {
-    "user": "joao256265",
-    "senha": "123",
-    "email": "teste@teste.com"
-  },
-  {
-    "user": "joao",
-    "senha": "teste",
-    "email": "teste@teste.com"
-  }
-]
+[{"user":"joao256265","senha":"123","email":"teste@teste.com"},{"id":2,"email":"asd","user":"asd","senha":"$2b$12$8Yq7zaNerim6xK88xpDFS.oJ8OrSxdwz5YCsBpluR0Yp2HZPOJP6i"}]
