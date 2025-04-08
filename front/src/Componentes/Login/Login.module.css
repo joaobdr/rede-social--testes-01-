@@ -88,3 +88,6 @@ h4.titulo {
 .opac {
   opacity: 0.5;
 }
+.btns {
+  display: flex;
+}

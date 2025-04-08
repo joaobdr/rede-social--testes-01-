@@ -2,20 +2,31 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import Login from "./Componentes/Login/Login";
 import Cadastrar from "./Componentes/Cadastrar/Cadastrar";
+import Home from "./Componentes/Home/Home";
+import Header from "./Componentes/Home/Header/Header";
 
 const links = {
   login:
-    "https://fictional-space-acorn-g4qp4pv94j6q2ppqg-3000.app.github.dev/api/login",
-  cad: "https://fictional-space-acorn-g4qp4pv94j6q2ppqg-3000.app.github.dev/api/cadastrar",
+    "https://laughing-halibut-x5g6qppg4r2pqvr-3000.app.github.dev/api/login",
+  cad: "https://laughing-halibut-x5g6qppg4r2pqvr-3000.app.github.dev/api/cadastrar",
+  update_perfil:
+    "https://laughing-halibut-x5g6qppg4r2pqvr-3000.app.github.dev/api/uploadperfil",
 };
 
 function App() {
   const [log, setLog] = React.useState(false);
   const [infoUser, setInfoUser] = React.useState(null);
 
-  console.log("informação de usuario = ", infoUser);
-
-  if (log) return <>Tela de usuario</>;
+  // if (log)
+  if (log)
+    return (
+      <BrowserRouter>
+        <Header user={infoUser} />
+        <Routes>
+          <Route path="/" element={<Home user={infoUser} />} />
+        </Routes>
+      </BrowserRouter>
+    );
 
   return (
     <BrowserRouter>

@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, Links } from "react-router-dom";
 import Input from "./Forms/Input";
 import style from "./Login.module.css";
 import React from "react";
 
-const Login = ({ setLog, links }) => {
+const Login = ({ setLog, links, setInfoUser }) => {
   const [user, setUser] = React.useState("");
   const [senha, setSenha] = React.useState("");
   const [res, setRes] = React.useState("");
@@ -21,14 +21,15 @@ const Login = ({ setLog, links }) => {
     };
     const js = await fetch(links.login, body);
     const ts = await js.json();
-
-    console.log(body);
-
     setRes(ts);
+    console.log(ts);
 
     if (ts.login) setLog(true);
+    setInfoUser({ ...ts.info });
     return setBtn(false);
   };
+
+  console.log(res);
 
   return (
     <>

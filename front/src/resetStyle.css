@@ -4,9 +4,10 @@
   font-family: cursive;
   font-size: 1rem;
   box-sizing: border-box;
+  list-style: none;
 }
 .container {
-  width: 80rem;
+  width: 70rem;
   margin: 0 auto;
 }
 a,

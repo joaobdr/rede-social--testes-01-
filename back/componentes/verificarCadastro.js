@@ -9,7 +9,14 @@ const verificarCadastro = (email, user, senha) => {
     if (db[i].email == email) return { ...resp, msg: "Email já cadastrado!!" };
   }
 
-  const us = { id: db.length + 1, email, user, senha };
+  const us = {
+    id: db.length + 1,
+    email,
+    user,
+    senha,
+    foto_perfil: "/assets/imgs/default/default.svg",
+    conteudo: [],
+  };
   db.push(us);
 
   console.log("sdf");
@@ -19,7 +26,8 @@ const verificarCadastro = (email, user, senha) => {
       resp = { cadastro: false, msg: "Erro não cadastro, tente mais tarde." };
   });
   resp = {
-    usuario: { ...us, senha: undefined },
+    info: { ...us, senha: undefined, id: undefined },
+    toke: "",
     msg: "Usuário cadastrado com sucesso!!",
     cadastro: true,
   };
