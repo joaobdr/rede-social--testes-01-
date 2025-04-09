@@ -1,7 +1,7 @@
-import Input from "../../Login/Forms/Input";
-import style from "./FormCadastro.module.css";
 import React from "react";
 import { Link } from "react-router-dom";
+import Input from "../../Login/Forms/Input";
+import style from "./FormCadastro.module.css";
 
 const FormCadastro = ({
   resp,
@@ -14,46 +14,65 @@ const FormCadastro = ({
   setSenha,
 }) => {
   const [email, setEmail] = React.useState("");
-  const [repetirSenha, setRepetirSenha] = React.useState("");
+  const [confirmarSenha, setConfirmarSenha] = React.useState("");
+  const [load, setLoad] = React.useState(null)
+
+  const validarCampos = () => {
+    if (!email || !nome || !senha || !confirmarSenha) {
+      setResp({ msg: "Preencha todos os campos!" });
+      return false;
+    }
+    if (senha !== confirmarSenha) {
+      setResp({ msg: "Senhas não são iguais!" });
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoad(true)
+    if (!validarCampos()) return setLoad(false);
 
-    if (!(senha === repetirSenha))
-      return setResp({ ...resp, msg: "Senhas não são iguais!" });
-
-    const body = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, nome, senha }),
-    };
-    const js = await fetch(links.cad, body);
-    const ts = await js.json();
-
-    setResp(ts);
-    // setLog(ts.cadastro);
-    setInfoUser(ts.usuario);
+    try {
+      const res = await fetch(links.cad, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, nome, senha }),
+      });
+      const data = await res.json();
+      setLoad(false)
+      setResp(data);
+      setInfoUser(data.usuario);
+    } catch (err) {
+      console.error(err);
+      setResp({ msg: "Erro ao cadastrar. Tente novamente." });
+      setLoad(false)
+    }
   };
 
   return (
-    <form className={style.form} onSubmit={handleSubmit}>
-      <Input nome="Email" tipo="text" valor={email} setValor={setEmail} />
-      <Input nome="Usuário" tipo="text" valor={nome} setValor={setNome} />
-      <Input nome="Senha" tipo="password" valor={senha} setValor={setSenha} />
-      <Input
-        nome="repetir senha"
-        tipo="password"
-        valor={repetirSenha}
-        setValor={setRepetirSenha}
-      />
+    <>
+      <h2 className={style.titulo}>Cadastrar</h2>
+      {load ? <section className={style.load}><div></div></section> : null} 
+      <form className={style.form} onSubmit={handleSubmit}>
+        <Input nome="Email" tipo="text" valor={email} setValor={setEmail} />
+        <Input nome="Usuário" tipo="text" valor={nome} setValor={setNome} />
+        <Input nome="Senha" tipo="password" valor={senha} setValor={setSenha} />
+        <Input
+          nome="Confirmar Senha"
+          tipo="password"
+          valor={confirmarSenha}
+          setValor={setConfirmarSenha}
+        />
 
-      {resp ? <span className={style.span}>{resp.msg}</span> : null}
-      <div className={style.btns}>
-        <Link to="/">Voltar</Link>
-        <button className={style.btn_cadastrar}>Próximo</button>
-      </div>
-    </form>
+        {resp?.msg && <span className={style.span}>{resp.msg}</span>}
+        <div className={style.btns}>
+          <Link to="/">Voltar</Link>
+          <button className={style.btn_cadastrar}>Próximo</button>
+        </div>
+      </form>
+    </>
   );
 };
 

@@ -11,14 +11,14 @@ const Cadastrar = ({ links, setLog, setInfoUser }) => {
   return (
     <main className={style.main}>
       <section className={style.section}>
-        <h2 className={style.titulo}>Cadastrar</h2>
-
         {resp.cadastro ? (
           <FormConfig
             links={links}
             info={resp.info}
-            nome={nome}
+            user={nome}
             senha={senha}
+            setLog={setLog}
+            setInfoUser={setInfoUser}
           />
         ) : (
           <FormCadastro

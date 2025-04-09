@@ -23,7 +23,7 @@ const verificarCadastro = (email, user, senha) => {
 
   fs.writeFile("files/db.json", JSON.stringify(db), "utf8", (err) => {
     if (err)
-      resp = { cadastro: false, msg: "Erro não cadastro, tente mais tarde." };
+      resp = { cadastro: false, msg: "Erro no cadastro, tente mais tarde." };
   });
   resp = {
     info: { ...us, senha: undefined, id: undefined },

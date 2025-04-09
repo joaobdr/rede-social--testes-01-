@@ -5,23 +5,22 @@ import Cadastrar from "./Componentes/Cadastrar/Cadastrar";
 import Home from "./Componentes/Home/Home";
 import Header from "./Componentes/Home/Header/Header";
 
+const init = "http://localhost:3000";
 const links = {
-  login:
-    "https://laughing-halibut-x5g6qppg4r2pqvr-3000.app.github.dev/api/login",
-  cad: "https://laughing-halibut-x5g6qppg4r2pqvr-3000.app.github.dev/api/cadastrar",
-  update_perfil:
-    "https://laughing-halibut-x5g6qppg4r2pqvr-3000.app.github.dev/api/uploadperfil",
+  base: init,
+  login: `${init}/api/login`,
+  cad: `${init}/api/cadastrar`,
+  update_perfil: `${init}/api/uploadperfil`,
 };
 
 function App() {
   const [log, setLog] = React.useState(false);
   const [infoUser, setInfoUser] = React.useState(null);
 
-  // if (log)
   if (log)
     return (
       <BrowserRouter>
-        <Header user={infoUser} />
+        <Header links={links} user={infoUser} />
         <Routes>
           <Route path="/" element={<Home user={infoUser} />} />
         </Routes>
