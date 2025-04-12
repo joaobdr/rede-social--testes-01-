@@ -44,7 +44,12 @@ function App() {
   if (log)
     return (
       <BrowserRouter>
-        <Header links={links} user={infoUser} />
+        <Header
+          links={links}
+          user={infoUser}
+          setInfoUser={setInfoUser}
+          setLog={setLog}
+        />
         <Routes>
           <Route path="/" element={<Home user={infoUser} links={links} />} />
         </Routes>

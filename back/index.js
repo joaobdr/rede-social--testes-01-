@@ -60,7 +60,7 @@ app.get("/api/validartoken", async (req, res) => {
     const decoded = jwt.verify(token, secretKey);
     const us = dados.find((u) => u.id === decoded.id);
 
-    if (!(idToken && decoded.id !== idToken)) {
+    if (!(idToken && decoded.id === idToken)) {
       return res.status(403).json({
         login: false,
         msg: "ID do token não corresponde ao ID fornecido",
@@ -77,6 +77,9 @@ app.get("/api/validartoken", async (req, res) => {
 });
 // *************************   CADASTRO   ***************************************
 app.post("/api/cadastrar", async (req, res) => {
+  if (!body.email || !body.nome || !body.senha) {
+    return res.status(400).json({ msg: "Campos obrigatórios faltando." });
+  }
   const body = req.body;
   const salt = await bcrypt.genSalt(12);
   const senha = await bcrypt.hash(`${body.senha}`, salt);
@@ -87,42 +90,36 @@ app.post("/api/cadastrar", async (req, res) => {
 app.post("/api/uploadperfil", upload.single("file"), async (req, res) => {
   try {
     const { user, senha } = req.body;
-    const ts = await verificarLogin(dados, user, senha);
-    if (!ts.login) {
-      fs.unlink(req.file.path, (err) => {
-        if (err) console.error("Erro ao deletar o arquivo:");
-      });
+    // Se o arquivo NÃO foi enviado
+    if (!req.file) {
+      return res.status(400).json({ error: "Nenhuma imagem foi enviada" });
+    }
+
+    const usuarioAtualizado = await verificarLogin(dados, user, senha);
+    if (!usuarioAtualizado.login) {
+      await fs
+        .unlink(req.file.path)
+        .catch((err) =>
+          console.error("Erro ao deletar o arquivo:", err.message)
+        );
       return res.status(200).json({ msg: "Usuário ou senha invalido!" });
     }
     var resp = {};
 
     const ma = dados.map((x) => {
       if (x.user == user) {
-        const ts = { ...x, foto_perfil: `/${req.file.path}` };
-        resp = { ...ts, senha: undefined };
-        return ts;
+        const usuarioAtualizado = { ...x, foto_perfil: `/${req.file.path}` };
+        resp = { ...usuarioAtualizado, senha: undefined };
+        return usuarioAtualizado;
       }
       return x;
     });
-
-    fs.writeFile("files/db.json", JSON.stringify(ma), "utf8", (err) => {
-      if (err)
-        resp = { cadastro: false, msg: "Erro no cadastro, tente mais tarde." };
-    });
-
-    // Se o arquivo NÃO foi enviado
-    if (!req.file)
-      return res.status(400).json({ error: "Nenhuma imagem foi enviada" });
-
-    const criado = new Date();
-    const validade = new Date(criado);
-    validade.setDate(criado.getDate() + 1);
+    await fs.promises.writeFile("files/db.json", JSON.stringify(ma), "utf8");
 
     return res.status(200).json({
       login: true,
       msg: "Foto atualizada com sucesso!",
       info: { ...resp },
-      token: "01",
     });
   } catch (error) {
     console.log("erro ");
