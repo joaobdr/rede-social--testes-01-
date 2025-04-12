@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Input from "../../Login/Forms/Input";
 import style from "./FormCadastro.module.css";
+import Load from "../../Load/Load";
 
 const FormCadastro = ({
   resp,
@@ -15,7 +16,7 @@ const FormCadastro = ({
 }) => {
   const [email, setEmail] = React.useState("");
   const [confirmarSenha, setConfirmarSenha] = React.useState("");
-  const [load, setLoad] = React.useState(null)
+  const [load, setLoad] = React.useState(null);
 
   const validarCampos = () => {
     if (!email || !nome || !senha || !confirmarSenha) {
@@ -31,7 +32,7 @@ const FormCadastro = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoad(true)
+    setLoad(true);
     if (!validarCampos()) return setLoad(false);
 
     try {
@@ -41,20 +42,20 @@ const FormCadastro = ({
         body: JSON.stringify({ email, nome, senha }),
       });
       const data = await res.json();
-      setLoad(false)
+      setLoad(false);
       setResp(data);
       setInfoUser(data.usuario);
     } catch (err) {
       console.error(err);
       setResp({ msg: "Erro ao cadastrar. Tente novamente." });
-      setLoad(false)
+      setLoad(false);
     }
   };
 
   return (
     <>
       <h2 className={style.titulo}>Cadastrar</h2>
-      {load ? <section className={style.load}><div></div></section> : null} 
+      {load ? <Load /> : null}
       <form className={style.form} onSubmit={handleSubmit}>
         <Input nome="Email" tipo="text" valor={email} setValor={setEmail} />
         <Input nome="Usuário" tipo="text" valor={nome} setValor={setNome} />

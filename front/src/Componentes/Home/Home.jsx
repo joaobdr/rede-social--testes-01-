@@ -1,14 +1,16 @@
+import React from "react";
+import Feed from "./Feed/Feed";
 import style from "./Home.module.css";
-const teste = {
-  info: { id: 2, email: "123", user: "123", conteudo: Array(0) },
-  login: true,
-  msg: "Login bem-sucedido",
-  token: "",
-};
 
-const Home = ({ user }) => {
-  console.log(user);
+const Home = ({ user, links }) => {
+  React.useEffect(() => {
+    localStorage.setItem("usuario", JSON.stringify(user));
+  }, []);
 
-  return <>Pagina do Feed</>;
+  return (
+    <>
+      <Feed user={user} links={links} />
+    </>
+  );
 };
 export default Home;

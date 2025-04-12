@@ -46,7 +46,7 @@
   cursor: pointer;
   margin-top: 20px;
 }
-.mensagem_erro{
+.mensagem_erro {
   text-align: center;
   display: block;
   margin: 0 auto;
@@ -55,8 +55,7 @@
   font-size: 1.2rem;
   font-weight: bold;
 }
-
-.load{
+.load {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -69,7 +68,7 @@
   align-items: center;
   border-radius: 15px;
 
-  & div{
+  & div {
     width: 170px;
     height: 170px;
     border-radius: 50%;
@@ -80,10 +79,10 @@
 }
 
 @keyframes load {
-  0%{
+  0% {
     rotate: 0deg;
-  } 
-  100%{
+  }
+  100% {
     rotate: 360deg;
   }
 }

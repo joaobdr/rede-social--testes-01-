@@ -1,23 +1,31 @@
 import bcrypt from "bcrypt";
-const verificarLogin = async (dados, nomeUsuario, senha) => {
-  const usuario = dados.find((u) => u.user === nomeUsuario);
-  var resp;
+import jwt from "jsonwebtoken";
 
-  if (!usuario) {
-    return (resp = { login: false, msg: "Usuário não encontrado" });
-  }
+const verificarLogin = async (dados, nomeUsuario, senha, secretKey) => {
+  const usuario = dados.find((u) => u.user === nomeUsuario);
+
+  if (!usuario) return { login: false, msg: "Usuário não encontrado" };
 
   const check = await bcrypt.compare(senha, usuario.senha);
-  if (!check) resp = { login: false, msg: "Senha incorreta" };
-  else
-    resp = {
+  if (!check) return { login: false, msg: "Senha incorreta" };
+  else {
+    // const token = criarToken(dados, usuario.id);
+    const token = jwt.sign({ id: usuario.id, user: usuario.user }, secretKey, {
+      expiresIn: "24h",
+    });
+
+    return {
       login: true,
       msg: "Login bem-sucedido",
-      token: "",
-      info: { ...usuario, senha: undefined },
+      info: {
+        ...usuario,
+        senha: undefined,
+        amigos: undefined,
+        conteudo: undefined,
+        token,
+      },
     };
-
-  return resp;
+  }
 };
 
 export default verificarLogin;

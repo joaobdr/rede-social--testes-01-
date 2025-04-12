@@ -15,19 +15,17 @@ const verificarCadastro = (email, user, senha) => {
     user,
     senha,
     foto_perfil: "/assets/imgs/default/default.svg",
+    amigos: [],
     conteudo: [],
   };
   db.push(us);
-
-  console.log("sdf");
 
   fs.writeFile("files/db.json", JSON.stringify(db), "utf8", (err) => {
     if (err)
       resp = { cadastro: false, msg: "Erro no cadastro, tente mais tarde." };
   });
   resp = {
-    info: { ...us, senha: undefined, id: undefined },
-    toke: "",
+    info: { ...us, senha: undefined, amigos: undefined, conteudo: undefined },
     msg: "Usuário cadastrado com sucesso!!",
     cadastro: true,
   };

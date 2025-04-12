@@ -1,11 +1,7 @@
 import { Link } from "react-router-dom";
 import style from "./Header.module.css";
 
-const Header = ({ links, user }) => {
-  console.log(user);
-  console.log('teste =', links.base + user.foto_perfil);
-  
-  
+const Header = ({ links, user }) => {  
   return (
     <header className={style.header}>
       <section className={`container ${style.section_header}`}>
@@ -14,7 +10,7 @@ const Header = ({ links, user }) => {
         </Link>
         <ul className={style.ul_header}>
           <li>
-            <Link to="/">
+            <Link to="/" className={style.foto_perfil}>
               <img src={links.base + user.foto_perfil} alt="" />
             </Link>
           </li>

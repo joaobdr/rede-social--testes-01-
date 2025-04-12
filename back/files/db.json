@@ -1,1 +1,82 @@
-[{"id":1,"email":"321","user":"321","senha":"$2b$12$jkcGt0bDn6tMTqU83JtDBuP5WWwJyk5rytPqZemeqUm38n1fVhAqK","foto_perfil":"/assets/imgs/public/1744239522561.jpg","conteudo":[]},{"id":2,"email":"123","user":"123","senha":"$2b$12$5MrglW6ISOba6p98JM2tw.JxJSVOUILuoW2zOejDZSflsin7aJsgq","foto_perfil":"/assets/imgs/default/default.svg","conteudo":[]},{"id":3,"email":"456","user":"456","senha":"$2b$12$9nUppf0giRRp.kLQPLOz/uBYvF87An.OxlJXP5puLRPUOwTyNR9ZS","foto_perfil":"/assets/imgs/default/default.svg","conteudo":[]},{"id":4,"email":"741","user":"741","senha":"$2b$12$NoTXmsOXsZLrkCDCphZXOuTkxD/ilbBvKra0qazQgN19aDyZKz.RW","foto_perfil":"/assets/imgs/public/1744240180955.jpg","conteudo":[]}]
+[
+  {
+    "id": 1,
+    "email": "123",
+    "user": "123",
+    "senha": "$2b$12$jg9i.mz8ygbVYkEcaN8dYOxMVc9z79NNApfCqtwYrBGGl2lRdA8Qa",
+    "foto_perfil": "/assets/imgs/public/1744240587645.jpg",
+    "amigos": ["2", "4"],
+    "conteudo": [
+      {
+        "publico": "publico",
+        "titulo": "Minhas Ferias",
+        "tipo_arq": "img",
+        "likes": "2",
+        "comentarios": [
+          {
+            "comentario": "Gostei muito da foto",
+            "data": "1744050587645",
+            "likes": "12",
+            "usuario": "4"
+          },
+          {
+            "comentario": "Gostei muito!!",
+            "data": "1744050586645",
+            "likes": "12",
+            "usuario": "4"
+          }
+        ],
+        "data_post": "1744000587645",
+        "conteudo": "/assets/imgs/public/1744246272335.jpg"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "email": "456",
+    "user": "456",
+    "senha": "$2b$12$KN.l8BcMY1ojexuSOoZ2.eZu/xKiHSrBOuSHitjhUvY57.VgJ7Mbm",
+    "foto_perfil": "/assets/imgs/default/default.svg",
+    "conteudo": []
+  },
+  {
+    "id": 3,
+    "email": "789",
+    "user": "789",
+    "senha": "$2b$12$aCGI10dhlgZEvt5QcH7HuO7qouSa5diMmziJ5E3kU489wIT9Buf3K",
+    "foto_perfil": "/assets/imgs/public/1744246206590.jpg",
+    "conteudo": []
+  },
+  {
+    "id": 4,
+    "email": "963",
+    "user": "963",
+    "senha": "$2b$12$y/oYuLyOSTSYhpGKUbtP0uzai0v3eIx8U.0wwkfHMCDjV1IoTkq9C",
+    "foto_perfil": "/assets/imgs/public/1744246272335.jpg",
+    "conteudo": []
+  },
+  {
+    "id": 5,
+    "email": "joao.victor.cxv.cxv@gmail.com",
+    "user": "Joao victor bdr",
+    "senha": "$2b$12$a8715mFs83485l2jL4bUDO3JOBG/knxcRL8VoQgIy3wpx4BerXLqG",
+    "foto_perfil": "/assets/imgs/default/default.svg",
+    "conteudo": []
+  },
+  {
+    "id": 6,
+    "email": "45",
+    "user": "45",
+    "senha": "$2b$12$634Ll5C5NRlJJ9HigaDqCeNhKVTztVef2gW/ir9Ynw8/DBeyVUxRG",
+    "foto_perfil": "/assets/imgs/default/default.svg",
+    "conteudo": []
+  },
+  {
+    "id": 7,
+    "email": "12",
+    "user": "12",
+    "senha": "$2b$12$9u2i9Jp7l0uStGH1nXJu.Oj/s9n22zjEEKVX.wfG4.OlccTVxoUpW",
+    "foto_perfil": "/assets/imgs/public/1744374895870.png",
+    "conteudo": []
+  }
+]

@@ -5,10 +5,14 @@ const fs = require("fs");
 const bcrypt = require("bcrypt");
 const multer = require("multer");
 const path = require("path");
+const jwt = require("jsonwebtoken");
 
 // ******************************************************************************
-const { default: verificarCadastro,} = require("./componentes/verificarCadastro.js");
+const {
+  default: verificarCadastro,
+} = require("./componentes/verificarCadastro.js");
 const { default: verificarLogin } = require("./componentes/verificarLogin.js");
+const { default: verificarToken } = require("./componentes/verificarToken.js");
 // *************************   TESTES   *****************************************
 // *************************   MULTER   *****************************************
 // Configuração do multer
@@ -30,17 +34,45 @@ app.use("/assets", express.static("assets"));
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ limit: "10mb", extended: true }));
 const dados = JSON.parse(fs.readFileSync("files/db.json", "utf8"));
+const secretKey = "aekj5kljwlkgjslçdkfjg54jgskldfg";
 
 // **************************   ROTAS   *****************************************
 // **************************   LOGIN   *****************************************
 app.post("/api/login", async (req, res) => {
-  try{
+  try {
     const { user, senha } = req.body;
-    const resp = await verificarLogin(dados, user, senha);
+    const resp = await verificarLogin(dados, user, senha, secretKey);
     return res.status(200).json(resp);
-  }catch(err){
-    console.log('err');
-    return res.status(500).json({msg: "Erro na requisição"});
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ msg: "Erro na requisição" });
+  }
+});
+// **********************   VALIDAR TOKEN   *************************************
+app.get("/api/validartoken", async (req, res) => {
+  const idToken = req.query.id;
+  const token = req.query.token;
+
+  if (!token)
+    return res.status(401).json({ login: false, msg: "Token não fornecido" });
+
+  try {
+    const decoded = jwt.verify(token, secretKey);
+    const us = dados.find((u) => u.id === decoded.id);
+
+    if (!(idToken && decoded.id !== idToken)) {
+      return res.status(403).json({
+        login: false,
+        msg: "ID do token não corresponde ao ID fornecido",
+      });
+    }
+    const { id, foto_perfil, user, email } = us;
+    return res.json({
+      login: true,
+      info: { id, foto_perfil, user, email, token },
+    });
+  } catch (err) {
+    return res.status(401).json({ login: false, msg: "Token inválido" });
   }
 });
 // *************************   CADASTRO   ***************************************
@@ -52,39 +84,58 @@ app.post("/api/cadastrar", async (req, res) => {
   return res.status(200).json(resp);
 });
 // *****************   ATUALIZAR FOTO DE PERFIL   *******************************
-app.post('/api/uploadperfil', upload.single('file'), async (req, res) => {
+app.post("/api/uploadperfil", upload.single("file"), async (req, res) => {
   try {
-    const {user, senha} = req.body;  
-    const ts = await verificarLogin(dados, user, senha)
-    if(!ts.login){
+    const { user, senha } = req.body;
+    const ts = await verificarLogin(dados, user, senha);
+    if (!ts.login) {
       fs.unlink(req.file.path, (err) => {
-        if (err)console.error('Erro ao deletar o arquivo:')
+        if (err) console.error("Erro ao deletar o arquivo:");
       });
-      return res.status(200).json({ msg: 'Usuário ou senha invalido!'})
+      return res.status(200).json({ msg: "Usuário ou senha invalido!" });
     }
     var resp = {};
 
-    const ma = dados.map(x => {
-      if(x.user == user) {
-      const ts = {...x, foto_perfil: `/${req.file.path}`}
-      resp = {...ts, senha: undefined, id: undefined}
-      return ts
-    }
-      return x
-    })  
+    const ma = dados.map((x) => {
+      if (x.user == user) {
+        const ts = { ...x, foto_perfil: `/${req.file.path}` };
+        resp = { ...ts, senha: undefined };
+        return ts;
+      }
+      return x;
+    });
 
     fs.writeFile("files/db.json", JSON.stringify(ma), "utf8", (err) => {
-      if (err) resp = { cadastro: false, msg: "Erro no cadastro, tente mais tarde." };
+      if (err)
+        resp = { cadastro: false, msg: "Erro no cadastro, tente mais tarde." };
     });
-    
-    // Se o arquivo NÃO foi enviado
-    if (!req.file) return res.status(400).json({ error: 'Nenhuma imagem foi enviada' })
 
-    return res.status(200).json({login: true,msg: 'Foto atualizada com sucesso!', info: {...resp}, token: "01"})
+    // Se o arquivo NÃO foi enviado
+    if (!req.file)
+      return res.status(400).json({ error: "Nenhuma imagem foi enviada" });
+
+    const criado = new Date();
+    const validade = new Date(criado);
+    validade.setDate(criado.getDate() + 1);
+
+    return res.status(200).json({
+      login: true,
+      msg: "Foto atualizada com sucesso!",
+      info: { ...resp },
+      token: "01",
+    });
   } catch (error) {
-    console.log('erro ');
-    return res.status(500).json({msg: 'Erro interno.'}) 
+    console.log("erro ");
+    return res.status(500).json({ msg: "Erro interno." });
   }
+});
+// *****************   ATUALIZAR FOTO DE PERFIL   *******************************
+app.get("/api/feed", (req, res) => {
+  const pag = req.query.pag;
+  const id = req.query.id;
+  const token = req.query.token;
+
+  return res.status(200).json({ msg: "reels enviado!!" });
 });
 // ************************   ROTA BASE   ***************************************
 app.get("/", (req, res) => res.status(200).json({ dados, msg: "ok" }));

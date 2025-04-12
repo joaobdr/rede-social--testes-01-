@@ -2,16 +2,17 @@ import { Link, Links } from "react-router-dom";
 import Input from "./Forms/Input";
 import style from "./Login.module.css";
 import React from "react";
+import Load from "../Load/Load";
 
 const Login = ({ setLog, links, setInfoUser }) => {
   const [user, setUser] = React.useState("");
   const [senha, setSenha] = React.useState("");
   const [res, setRes] = React.useState("");
-  const [btn, setBtn] = React.useState(false);
+  const [load, setLoad] = React.useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setBtn(true);
+    setLoad(true);
     const body = {
       method: "POST",
       headers: {
@@ -26,14 +27,13 @@ const Login = ({ setLog, links, setInfoUser }) => {
 
     if (ts.login) setLog(true);
     setInfoUser({ ...ts.info });
-    return setBtn(false);
+    return setLoad(false);
   };
-
-  console.log(res);
 
   return (
     <>
       <main className={style.main}>
+        {load ? <Load /> : null}
         <section className={style.login}>
           <h4 className={style.titulo}>Login</h4>
 
@@ -56,9 +56,7 @@ const Login = ({ setLog, links, setInfoUser }) => {
               <span className={`${style.mensagem_erro}`}>{res.msg}!!</span>
             ) : null}
 
-            <button className={style.btn_form + ` ${btn ? style.opac : ""}`}>
-              Entrar
-            </button>
+            <button className={style.btn_form}>Entrar</button>
           </form>
         </section>
       </main>

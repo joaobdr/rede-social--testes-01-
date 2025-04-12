@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  height: 50px;
+  height: 55px;
   background: #066d53;
 }
 .section_header {
@@ -21,6 +21,17 @@
 .ul_header {
   display: flex;
 }
-.ul_header a img {
-  width: 40px;
+.foto_perfil{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 2px solid #263869;
+  }
 }
