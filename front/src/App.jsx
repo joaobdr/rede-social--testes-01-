@@ -6,7 +6,7 @@ import Home from "./Componentes/Home/Home";
 import Header from "./Componentes/Home/Header/Header";
 import Load from "./Componentes/Load/Load";
 
-const init = "https://ominous-train-jj5gjgp6jvjjhwwv-3000.app.github.dev";
+const init = "http://localhost:3000";
 const links = {
   base: init,
   login: `${init}/api/login`,
@@ -24,9 +24,13 @@ function App() {
 
   React.useEffect(() => {
     if (local) {
+      console.log(local);
+
       fetch(`${links.token}?token=${local.token}&id=${local.id}`)
         .then((x) => x.json())
         .then((x) => {
+          console.log(x);
+          
           setLog(x.login);
           setInfoUser(x.info);
           setLoading(false);

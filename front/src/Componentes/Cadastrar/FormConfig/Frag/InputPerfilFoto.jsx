@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Geral.module.css";
 
-const InputPerfilFoto = ({ info, imagem, setImagem }) => {
+const InputPerfilFoto = ({ info, imagem, setImagem, links }) => {
   const [img, setImg] = React.useState(null);
   const handleImageChange = (event) => {
     const file = event.target.files[0]; // Pega o primeiro arquivo selecionado
@@ -17,7 +17,7 @@ const InputPerfilFoto = ({ info, imagem, setImagem }) => {
   return (
     <div className={style.foto_perfil_div}>
       <figure className={style.foto_perfil}>
-        <img src={img ? img : info.foto_perfil} alt="" />
+        <img src={img ? img : `${links.base}${info.foto_perfil}`} alt="" />
       </figure>
       <label htmlFor="trocar_foto" className={style.label_foto}>
         <img src="/assets/imgs/pen.svg" alt="" />

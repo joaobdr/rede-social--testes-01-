@@ -6,6 +6,7 @@ const Home = ({ user, links }) => {
   React.useEffect(() => {
     localStorage.setItem("usuario", JSON.stringify(user));
   }, []);
+  console.log(user);
 
   return (
     <>

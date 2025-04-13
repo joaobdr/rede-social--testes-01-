@@ -11,6 +11,10 @@ const FormConfig = ({ links, info, user, senha, setLog, setInfoUser }) => {
   const navigate = useNavigate();
 
   const atualizarEstadoUsuario = ({ login, info, msg }) => {
+    console.log('info ==', info);
+    console.log('login ==', login);
+    console.log('msg ==', msg);
+    
     setMensagem(msg);
     setLog(login);
     setInfoUser(info);
@@ -30,6 +34,8 @@ const FormConfig = ({ links, info, user, senha, setLog, setInfoUser }) => {
     });
 
     const data = await response.json();
+    console.log(data);
+    
     atualizarEstadoUsuario(data);
   };
 
@@ -41,8 +47,7 @@ const FormConfig = ({ links, info, user, senha, setLog, setInfoUser }) => {
       },
       body: JSON.stringify({ user, senha }),
     });
-
-    const data = await response.json();
+    const data = await response.json();    
     atualizarEstadoUsuario(data);
   };
 
@@ -55,7 +60,12 @@ const FormConfig = ({ links, info, user, senha, setLog, setInfoUser }) => {
   return (
     <form className={style.form} onSubmit={handleSubmit}>
       {load ? <Load /> : null}
-      <InputPerfilFoto info={info} imagem={imagem} setImagem={setImagem} />
+      <InputPerfilFoto
+        info={info}
+        imagem={imagem}
+        setImagem={setImagem}
+        links={links}
+      />
       <h4 className={style.nomeUsuario}>{info.user}</h4>
       <span className={style.mensagem_erro}>{mensagem}</span>
       <div className={style.btns}>

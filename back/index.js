@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 app.use("/assets", express.static("assets"));
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ limit: "10mb", extended: true }));
-const dados = JSON.parse(fs.readFileSync("files/db.json", "utf8"));
+const dados = () => JSON.parse(fs.readFileSync("files/db.json", "utf8"))
 const secretKey = "aekj5kljwlkgjslçdkfjg54jgskldfg";
 
 // **************************   ROTAS   *****************************************
@@ -41,7 +41,7 @@ const secretKey = "aekj5kljwlkgjslçdkfjg54jgskldfg";
 app.post("/api/login", async (req, res) => {
   try {
     const { user, senha } = req.body;
-    const resp = await verificarLogin(dados, user, senha, secretKey);
+    const resp = await verificarLogin(dados(), user, senha, secretKey);
     return res.status(200).json(resp);
   } catch (err) {
     console.log(err);
@@ -53,76 +53,67 @@ app.get("/api/validartoken", async (req, res) => {
   const idToken = req.query.id;
   const token = req.query.token;
 
-  if (!token)
-    return res.status(401).json({ login: false, msg: "Token não fornecido" });
+  if (!token) return res.status(401).json({ login: false, msg: "Token não fornecido" });
 
   try {
-    const decoded = jwt.verify(token, secretKey);
-    const us = dados.find((u) => u.id === decoded.id);
+    const decoded = jwt.verify(token, secretKey);    
+    const us = dados().find((u) => u.id === decoded.id);
 
-    if (!(idToken && decoded.id === idToken)) {
-      return res.status(403).json({
-        login: false,
-        msg: "ID do token não corresponde ao ID fornecido",
-      });
-    }
-    const { id, foto_perfil, user, email } = us;
-    return res.json({
-      login: true,
-      info: { id, foto_perfil, user, email, token },
-    });
+    if (!(`${decoded.id}` === idToken))return res.status(403).json({login: false,msg: "ID do token não corresponde ao ID fornecido",})
+
+    const { id, foto_perfil, user } = us;
+    return res.json({login: true, info: { id, foto_perfil, user, token }});
   } catch (err) {
+    console.log(err);
     return res.status(401).json({ login: false, msg: "Token inválido" });
   }
 });
 // *************************   CADASTRO   ***************************************
 app.post("/api/cadastrar", async (req, res) => {
+  const body = req.body;
   if (!body.email || !body.nome || !body.senha) {
     return res.status(400).json({ msg: "Campos obrigatórios faltando." });
   }
-  const body = req.body;
   const salt = await bcrypt.genSalt(12);
   const senha = await bcrypt.hash(`${body.senha}`, salt);
-  const resp = verificarCadastro(body.email, body.nome, senha);
+  const resp = await verificarCadastro(body.email, body.nome, senha, secretKey);
   return res.status(200).json(resp);
 });
 // *****************   ATUALIZAR FOTO DE PERFIL   *******************************
 app.post("/api/uploadperfil", upload.single("file"), async (req, res) => {
   try {
-    const { user, senha } = req.body;
-    // Se o arquivo NÃO foi enviado
-    if (!req.file) {
-      return res.status(400).json({ error: "Nenhuma imagem foi enviada" });
+    const {user, senha} = req.body
+    if(!req.file) return res.status(400).json({msg: 'Nenhuma imagem foi enviada'})
+      
+    const validExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
+    const fileExt = path.extname(req.file.originalname).toLowerCase();
+
+    if (!validExtensions.includes(fileExt)) {
+      await fs.promises.unlink(req.file.path);
+      return res.status(400).json({ msg: 'Extensão de imagem inválida.' });
     }
 
-    const usuarioAtualizado = await verificarLogin(dados, user, senha);
-    if (!usuarioAtualizado.login) {
-      await fs
-        .unlink(req.file.path)
-        .catch((err) =>
-          console.error("Erro ao deletar o arquivo:", err.message)
-        );
-      return res.status(200).json({ msg: "Usuário ou senha invalido!" });
+    const usuarios = dados()
+    const usuarioExiste = await verificarLogin(usuarios, user, senha, secretKey);
+
+    if(!usuarioExiste.login) {
+      await fs.promises.unlink(req.file.path).catch((err) =>console.error("Erro ao deletar o arquivo:", err.message));
+      return res.status(404).json({msg: 'Usuário sem permissão!!'})
     }
-    var resp = {};
-
-    const ma = dados.map((x) => {
-      if (x.user == user) {
-        const usuarioAtualizado = { ...x, foto_perfil: `/${req.file.path}` };
-        resp = { ...usuarioAtualizado, senha: undefined };
-        return usuarioAtualizado;
-      }
-      return x;
-    });
-    await fs.promises.writeFile("files/db.json", JSON.stringify(ma), "utf8");
-
-    return res.status(200).json({
-      login: true,
-      msg: "Foto atualizada com sucesso!",
-      info: { ...resp },
-    });
+    const usuario = usuarios.find((u) => u.user === user);    
+    usuario.foto_perfil = `/assets/imgs/public/${req.file.filename}`
+    
+    const banco = usuarios.map(x =>(x.user === user)? {...usuario} : {...x})
+    const usuarioSeguro = {...usuario,token: usuarioExiste.info.token};
+    delete usuarioSeguro.senha;
+    delete usuarioSeguro.conteudo;
+    delete usuarioSeguro.amigos;
+    delete usuarioSeguro.email;    
+    
+    await fs.promises.writeFile("files/db.json", JSON.stringify(banco), "utf8");
+    return res.status(200).json({msg: 'Foto de perfil atualizada com sucesso!!', login: true, info:{...usuarioSeguro}})
   } catch (error) {
-    console.log("erro ");
+    console.error("Erro interno:", error);
     return res.status(500).json({ msg: "Erro interno." });
   }
 });
@@ -135,7 +126,7 @@ app.get("/api/feed", (req, res) => {
   return res.status(200).json({ msg: "reels enviado!!" });
 });
 // ************************   ROTA BASE   ***************************************
-app.get("/", (req, res) => res.status(200).json({ dados, msg: "ok" }));
+app.get("/", (req, res) => res.status(200).json({ dados: dados(), msg: "ok" }));
 
 app.listen(port, () => {
   console.log("servidor rodando na porta:");

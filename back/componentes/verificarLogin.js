@@ -19,10 +19,11 @@ const verificarLogin = async (dados, nomeUsuario, senha, secretKey) => {
       msg: "Login bem-sucedido",
       info: {
         ...usuario,
+        token,
         senha: undefined,
         amigos: undefined,
         conteudo: undefined,
-        token,
+        email: undefined,
       },
     };
   }

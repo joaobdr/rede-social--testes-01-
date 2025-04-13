@@ -42,11 +42,12 @@ const FormCadastro = ({
         body: JSON.stringify({ email, nome, senha }),
       });
       const data = await res.json();
+
       setLoad(false);
       setResp(data);
-      setInfoUser(data.usuario);
+      setInfoUser(data.info);
     } catch (err) {
-      console.error(err);
+      console.error("erro ==== ", err);
       setResp({ msg: "Erro ao cadastrar. Tente novamente." });
       setLoad(false);
     }
