@@ -1,1 +1,374 @@
-[{"id":1,"email":"123","user":"123","senha":"$2b$12$jg9i.mz8ygbVYkEcaN8dYOxMVc9z79NNApfCqtwYrBGGl2lRdA8Qa","foto_perfil":"/assets/imgs/public/1744503285123.jpg","amigos":["2","4"],"conteudo":[{"publico":"publico","titulo":"Minhas Ferias","tipo_arq":"img","likes":"2","comentarios":[{"comentario":"Gostei muito da foto","data":"1744050587645","likes":"12","usuario":"4"},{"comentario":"Gostei muito!!","data":"1744050586645","likes":"12","usuario":"4"}],"data_post":"1744000587645","conteudo":"/assets/imgs/public/1744246272335.jpg"}]},{"id":2,"email":"456","user":"456","senha":"$2b$12$KN.l8BcMY1ojexuSOoZ2.eZu/xKiHSrBOuSHitjhUvY57.VgJ7Mbm","foto_perfil":"/assets/imgs/default/default.svg","conteudo":[]},{"id":3,"email":"789","user":"789","senha":"$2b$12$aCGI10dhlgZEvt5QcH7HuO7qouSa5diMmziJ5E3kU489wIT9Buf3K","foto_perfil":"/assets/imgs/public/1744246206590.jpg","conteudo":[]},{"id":4,"email":"963","user":"963","senha":"$2b$12$y/oYuLyOSTSYhpGKUbtP0uzai0v3eIx8U.0wwkfHMCDjV1IoTkq9C","foto_perfil":"/assets/imgs/public/1744246272335.jpg","conteudo":[]},{"id":5,"email":"321","user":"321","senha":"$2b$12$12.QB36e5Md/jReu.DhVqemOAXVNvzCpGJ/EVmkU9FjOwqSy9frLK","foto_perfil":"/assets/imgs/public/1744492277422.jpg","amigos":[],"conteudo":[]},{"id":6,"email":"654","user":"654","senha":"$2b$12$/3gVHRagCVSDiVYK6igwFu3ybt7KXlZx26.3QrzblJ29ajf2zXkAy","foto_perfil":"/assets/imgs/public/1744492365889.jpg","amigos":[],"conteudo":[]},{"id":7,"email":"asd","user":"asd","senha":"$2b$12$4fBYXmI9S8Khi83bKua65O08EKa1r4kMEPnqhe9NvUJcUxV3ZG34u","foto_perfil":"/assets/imgs/public/1744492651281.jpg","amigos":[],"conteudo":[]},{"id":8,"email":"852","user":"852","senha":"$2b$12$U5a7agOm2czjbdyG51xXVOUFyhWxmXvqGVSlN/3Dsy7fcmQR9z3p2","foto_perfil":"/assets/imgs/public/1744492747342.jpg","amigos":[],"conteudo":[]},{"id":9,"email":"159","user":"159","senha":"$2b$12$OYNtmk1Fy0l7BhT6cBfMFOHcgoMjmZUSgGXRC29Ue8fstNRRCHJ22","foto_perfil":"/assets/imgs/public/1744492898229.jpg","amigos":[],"conteudo":[]},{"id":10,"email":"qwe","user":"qwe","senha":"$2b$12$mTp9FP9fNilZ3QwDfLdOk.f8VlBZ1BxWS647xuuyu2CzxTSVnK/Eu","foto_perfil":"/assets/imgs/public/1744492980177.jpg","amigos":[],"conteudo":[]},{"id":11,"email":"a123","user":"a123","senha":"$2b$12$dP.nHqxC7Wf5.BdfJfIzo.nfLxaaHWL2aM7MP01kZn.ua3gWD3fO2","foto_perfil":"/assets/imgs/default/default.svg","amigos":[],"conteudo":[]},{"id":12,"email":"b123","user":"b123","senha":"$2b$12$uRzfpUthnWm4ua1rnRJqxez3qVyCUZ0qn8fVMSebzK8zH30O0ui9C","foto_perfil":"/assets/imgs/public/1744493397284.jpg","amigos":[],"conteudo":[]},{"id":13,"email":"c123","user":"c123","senha":"$2b$12$1rfAaVuLYNYVUhhy4VhBoO/MLmnXLhXgu2kawE5f5WoU5827l7on2","foto_perfil":"/assets/imgs/public/1744493451248.jpg","amigos":[],"conteudo":[]},{"id":14,"email":"d123","user":"d123","senha":"$2b$12$jzux8qyL05IZuieJG2.3t.nX3ghooZK3Gw9lAGAtJxRv1.Bu0Nptm","foto_perfil":"/assets/imgs/public/1744493579918.jpg","amigos":[],"conteudo":[]},{"id":15,"email":"e123","user":"e123","senha":"$2b$12$WZpmIS8KRgkjyNE1lf/rYOuCzibGnK5iMR2yosVUvaVPB5StgiQ4W","foto_perfil":"/assets/imgs/public/1744493637596.jpg","amigos":[],"conteudo":[]},{"id":16,"email":"f123","user":"f123","senha":"$2b$12$BgrJHNhCcN744YjuYlxENu2AMnxh/IxuXS5vMHqmprULhNAboKzi6","foto_perfil":"/assets/imgs/public/1744493710791.jpg","amigos":[],"conteudo":[]},{"id":17,"email":"g123","user":"g123","senha":"$2b$12$2Rf6Fg5NW5OGfwVzzp0pzuzBGT7GhpEc/flOefyq7OjWt7lboFdWi","foto_perfil":"/assets/imgs/public/1744493790860.jpg","amigos":[],"conteudo":[]},{"id":18,"email":"h123","user":"h123","senha":"$2b$12$tZRMfiVjmUNWmAxFgfQiOeMugcB6UO.5rWnEZJ407RUmchHt2VKBW","foto_perfil":"/assets/imgs/public/1744493838926.jpg","amigos":[],"conteudo":[]},{"id":19,"email":"i123","user":"i123","senha":"$2b$12$LuNcHEqz7N8BMcBSc/0faefZL5i0wCQUI7iity5xh.99KPmEsGuWG","foto_perfil":"/assets/imgs/public/1744493898295.jpg","amigos":[],"conteudo":[]},{"id":20,"email":"j123","user":"j123","senha":"$2b$12$Xl.0Dsq3miURi7gDZi0EQeuk31h8nNbeCL0TfLjmSWHLbPGAYGO0i","foto_perfil":"/assets/imgs/public/1744493952310.jpg","amigos":[],"conteudo":[]},{"id":21,"email":"k123","user":"k123","senha":"$2b$12$HIykqyrhJkbPMDDvBrA0Kuba/0EnS.632zBYNs4XtYlUTuKDmT4qe","foto_perfil":"/assets/imgs/public/1744494011819.jpg","amigos":[],"conteudo":[]},{"id":22,"email":"l123","user":"l123","senha":"$2b$12$h4Az4bowY.yaxvo/vlkzQulmjnj.SEvxgWr4RO2oIlYKiD.z6n1DK","foto_perfil":"/assets/imgs/public/1744494073042.jpg","amigos":[],"conteudo":[]},{"id":23,"email":"m123","user":"m123","senha":"$2b$12$yq53rYIQithZ8NQD6peJfuStK3bLEm8uOuYyjiSzw9WgqtuNJ4h/q","foto_perfil":"/assets/imgs/public/1744494227757.jpg","amigos":[],"conteudo":[]},{"id":24,"email":"n123","user":"n123","senha":"$2b$12$hbDdfBM0l.hCvI2Sicamf.CAZoglFp17B.UdyCUI1n0pmJ4LpHnbm","foto_perfil":"/assets/imgs/public/1744494293029.jpg","amigos":[],"conteudo":[]},{"id":25,"email":"o123","user":"o123","senha":"$2b$12$wAwoThUSdMii6u/cpe9/hOur0phEjjVReXqjzkKdmTfLhVMdAJjOC","foto_perfil":"/uploads/1744494433342.jpg","amigos":[],"conteudo":[]},{"id":26,"email":"a321","user":"a321","senha":"$2b$12$YO7zBbz3f2p.pKdHOkhA.OESM0BYy1nzEWBmS/WGvWpl3qTk/a.vC","foto_perfil":"/assets/imgs/public/1744501380643.jpg","amigos":[],"conteudo":[]},{"id":27,"email":"a320","user":"a320","senha":"$2b$12$bZL5fwC.ZTiYGgPf5h6JV.UamT2hkneYi7x4nsKdb9XBhOQF4xEX2","foto_perfil":"/assets/imgs/public/1744501602848.jpg","amigos":[],"conteudo":[]},{"id":28,"email":"a319","user":"a319","senha":"$2b$12$hGYj97X4uocOvPoIlNbXT.LlrWWwVyQJFYTDpYPZ.VjWilyvHomOK","foto_perfil":"/assets/imgs/public/1744501633073.jpg","amigos":[],"conteudo":[]}]
+[
+  {
+    "id": 1,
+    "email": "123",
+    "user": "123",
+    "senha": "$2b$12$jg9i.mz8ygbVYkEcaN8dYOxMVc9z79NNApfCqtwYrBGGl2lRdA8Qa",
+    "foto_perfil": "/assets/imgs/public/9450d0e1-2ecd-49a2-b96c-f70f2c649096.jpg",
+    "amigos": ["2", "3", "4"],
+    "conteudo": [
+      {
+        "publico": "publico",
+        "titulo": "Minhas Ferias",
+        "tipo_arq": "img",
+        "likes": "2",
+        "comentarios": [
+          {
+            "comentario": "Gostei muito da foto",
+            "data": "1744050587645",
+            "likes": "12",
+            "usuario": "4"
+          },
+          {
+            "comentario": "Gostei muito!!",
+            "data": "1744050586645",
+            "likes": "12",
+            "usuario": "4"
+          }
+        ],
+        "data_post": "1744000587645",
+        "conteudo": "/assets/imgs/public/95706d1a-7706-473a-947e-9d033f95658e.jpg"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "email": "456",
+    "user": "456",
+    "senha": "$2b$12$KN.l8BcMY1ojexuSOoZ2.eZu/xKiHSrBOuSHitjhUvY57.VgJ7Mbm",
+    "foto_perfil": "/assets/imgs/default/default.svg",
+    "conteudo": [
+      {
+        "publico": "publico",
+        "titulo": "Minhas Ferias",
+        "tipo_arq": "img",
+        "likes": "2",
+        "comentarios": [
+          {
+            "comentario": "Gostei muito da foto",
+            "data": "1744050587645",
+            "likes": "12",
+            "usuario": "4"
+          },
+          {
+            "comentario": "Gostei muito!!",
+            "data": "1744050586545",
+            "likes": "12",
+            "usuario": "4"
+          }
+        ],
+        "data_post": "1744000567645",
+        "conteudo": "/assets/imgs/public/e631f08d-ef60-4167-9778-c1119f407013.jpg"
+      },
+      {
+        "publico": "publico",
+        "titulo": "Minhas Ferias",
+        "tipo_arq": "img",
+        "likes": "5",
+        "comentarios": [
+          {
+            "comentario": "Gostei muito da foto",
+            "data": "1744050587645",
+            "likes": "12",
+            "usuario": "4"
+          },
+          {
+            "comentario": "Gostei muito!!",
+            "data": "1744090588545",
+            "likes": "12",
+            "usuario": "4"
+          }
+        ],
+        "data_post": "1744000567645",
+        "conteudo": "/assets/imgs/public/e631f08d-ef60-4167-9778-c1119f407013.jpg"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "email": "789",
+    "user": "789",
+    "senha": "$2b$12$aCGI10dhlgZEvt5QcH7HuO7qouSa5diMmziJ5E3kU489wIT9Buf3K",
+    "foto_perfil": "/assets/imgs/public/1744246206590.jpg",
+    "conteudo": [
+          {
+            "publico": "publico",
+            "titulo": "Minhas Ferias",
+            "tipo_arq": "img",
+            "likes": "2",
+            "comentarios": [
+              {
+                "comentario": "Gostei muito da foto",
+                "data": "1744050587645",
+                "likes": "12",
+                "usuario": "4"
+              },
+              {
+                "comentario": "Gostei muito!!",
+                "data": "1744050586645",
+                "likes": "12",
+                "usuario": "4"
+              }
+            ],
+            "data_post": "1744000797545",
+            "conteudo": "/assets/imgs/public/1744503285123.jpg"
+          }
+        ]
+  },
+  {
+    "id": 4,
+    "email": "963",
+    "user": "963",
+    "senha": "$2b$12$y/oYuLyOSTSYhpGKUbtP0uzai0v3eIx8U.0wwkfHMCDjV1IoTkq9C",
+    "foto_perfil": "/assets/imgs/public/1744246272335.jpg",
+    "conteudo": [
+      {
+        "publico": "publico",
+        "titulo": "Minhas Ferias",
+        "tipo_arq": "img",
+        "likes": "2",
+        "comentarios": [
+          {
+            "comentario": "Gostei muito da foto",
+            "data": "1744050587645",
+            "likes": "12",
+            "usuario": "4"
+          },
+          {
+            "comentario": "Gostei muito!!",
+            "data": "1744050586645",
+            "likes": "12",
+            "usuario": "4"
+          }
+        ],
+        "data_post": "1744000587545",
+        "conteudo": "/assets/imgs/public/1744503285123.jpg"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "email": "321",
+    "user": "321",
+    "senha": "$2b$12$12.QB36e5Md/jReu.DhVqemOAXVNvzCpGJ/EVmkU9FjOwqSy9frLK",
+    "foto_perfil": "/assets/imgs/public/1744492277422.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 6,
+    "email": "654",
+    "user": "654",
+    "senha": "$2b$12$/3gVHRagCVSDiVYK6igwFu3ybt7KXlZx26.3QrzblJ29ajf2zXkAy",
+    "foto_perfil": "/assets/imgs/public/1744492365889.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 7,
+    "email": "asd",
+    "user": "asd",
+    "senha": "$2b$12$4fBYXmI9S8Khi83bKua65O08EKa1r4kMEPnqhe9NvUJcUxV3ZG34u",
+    "foto_perfil": "/assets/imgs/public/1744492651281.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 8,
+    "email": "852",
+    "user": "852",
+    "senha": "$2b$12$U5a7agOm2czjbdyG51xXVOUFyhWxmXvqGVSlN/3Dsy7fcmQR9z3p2",
+    "foto_perfil": "/assets/imgs/public/1744492747342.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 9,
+    "email": "159",
+    "user": "159",
+    "senha": "$2b$12$OYNtmk1Fy0l7BhT6cBfMFOHcgoMjmZUSgGXRC29Ue8fstNRRCHJ22",
+    "foto_perfil": "/assets/imgs/public/1744492898229.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 10,
+    "email": "qwe",
+    "user": "qwe",
+    "senha": "$2b$12$mTp9FP9fNilZ3QwDfLdOk.f8VlBZ1BxWS647xuuyu2CzxTSVnK/Eu",
+    "foto_perfil": "/assets/imgs/public/1744492980177.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 11,
+    "email": "a123",
+    "user": "a123",
+    "senha": "$2b$12$dP.nHqxC7Wf5.BdfJfIzo.nfLxaaHWL2aM7MP01kZn.ua3gWD3fO2",
+    "foto_perfil": "/assets/imgs/default/default.svg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 12,
+    "email": "b123",
+    "user": "b123",
+    "senha": "$2b$12$uRzfpUthnWm4ua1rnRJqxez3qVyCUZ0qn8fVMSebzK8zH30O0ui9C",
+    "foto_perfil": "/assets/imgs/public/1744493397284.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 13,
+    "email": "c123",
+    "user": "c123",
+    "senha": "$2b$12$1rfAaVuLYNYVUhhy4VhBoO/MLmnXLhXgu2kawE5f5WoU5827l7on2",
+    "foto_perfil": "/assets/imgs/public/1744493451248.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 14,
+    "email": "d123",
+    "user": "d123",
+    "senha": "$2b$12$jzux8qyL05IZuieJG2.3t.nX3ghooZK3Gw9lAGAtJxRv1.Bu0Nptm",
+    "foto_perfil": "/assets/imgs/public/1744493579918.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 15,
+    "email": "e123",
+    "user": "e123",
+    "senha": "$2b$12$WZpmIS8KRgkjyNE1lf/rYOuCzibGnK5iMR2yosVUvaVPB5StgiQ4W",
+    "foto_perfil": "/assets/imgs/public/1744493637596.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 16,
+    "email": "f123",
+    "user": "f123",
+    "senha": "$2b$12$BgrJHNhCcN744YjuYlxENu2AMnxh/IxuXS5vMHqmprULhNAboKzi6",
+    "foto_perfil": "/assets/imgs/public/1744493710791.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 17,
+    "email": "g123",
+    "user": "g123",
+    "senha": "$2b$12$2Rf6Fg5NW5OGfwVzzp0pzuzBGT7GhpEc/flOefyq7OjWt7lboFdWi",
+    "foto_perfil": "/assets/imgs/public/1744493790860.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 18,
+    "email": "h123",
+    "user": "h123",
+    "senha": "$2b$12$tZRMfiVjmUNWmAxFgfQiOeMugcB6UO.5rWnEZJ407RUmchHt2VKBW",
+    "foto_perfil": "/assets/imgs/public/1744493838926.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 19,
+    "email": "i123",
+    "user": "i123",
+    "senha": "$2b$12$LuNcHEqz7N8BMcBSc/0faefZL5i0wCQUI7iity5xh.99KPmEsGuWG",
+    "foto_perfil": "/assets/imgs/public/1744493898295.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 20,
+    "email": "j123",
+    "user": "j123",
+    "senha": "$2b$12$Xl.0Dsq3miURi7gDZi0EQeuk31h8nNbeCL0TfLjmSWHLbPGAYGO0i",
+    "foto_perfil": "/assets/imgs/public/1744493952310.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 21,
+    "email": "k123",
+    "user": "k123",
+    "senha": "$2b$12$HIykqyrhJkbPMDDvBrA0Kuba/0EnS.632zBYNs4XtYlUTuKDmT4qe",
+    "foto_perfil": "/assets/imgs/public/1744494011819.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 22,
+    "email": "l123",
+    "user": "l123",
+    "senha": "$2b$12$h4Az4bowY.yaxvo/vlkzQulmjnj.SEvxgWr4RO2oIlYKiD.z6n1DK",
+    "foto_perfil": "/assets/imgs/public/1744494073042.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 23,
+    "email": "m123",
+    "user": "m123",
+    "senha": "$2b$12$yq53rYIQithZ8NQD6peJfuStK3bLEm8uOuYyjiSzw9WgqtuNJ4h/q",
+    "foto_perfil": "/assets/imgs/public/1744494227757.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 24,
+    "email": "n123",
+    "user": "n123",
+    "senha": "$2b$12$hbDdfBM0l.hCvI2Sicamf.CAZoglFp17B.UdyCUI1n0pmJ4LpHnbm",
+    "foto_perfil": "/assets/imgs/public/1744494293029.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 25,
+    "email": "o123",
+    "user": "o123",
+    "senha": "$2b$12$wAwoThUSdMii6u/cpe9/hOur0phEjjVReXqjzkKdmTfLhVMdAJjOC",
+    "foto_perfil": "/uploads/1744494433342.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 26,
+    "email": "a321",
+    "user": "a321",
+    "senha": "$2b$12$YO7zBbz3f2p.pKdHOkhA.OESM0BYy1nzEWBmS/WGvWpl3qTk/a.vC",
+    "foto_perfil": "/assets/imgs/public/1744501380643.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 27,
+    "email": "a320",
+    "user": "a320",
+    "senha": "$2b$12$bZL5fwC.ZTiYGgPf5h6JV.UamT2hkneYi7x4nsKdb9XBhOQF4xEX2",
+    "foto_perfil": "/assets/imgs/public/1744501602848.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 28,
+    "email": "a319",
+    "user": "a319",
+    "senha": "$2b$12$hGYj97X4uocOvPoIlNbXT.LlrWWwVyQJFYTDpYPZ.VjWilyvHomOK",
+    "foto_perfil": "/assets/imgs/public/1744501633073.jpg",
+    "amigos": [],
+    "conteudo": []
+  },
+  {
+    "id": 29,
+    "email": "123456",
+    "user": "123456",
+    "senha": "$2b$12$N6Hmy.rRGlOiXLAhjwGNP.ebZniI/BXpcvwnX5X31wV2CVfrRXyWG",
+    "foto_perfil": "/assets/imgs/default/default.svg",
+    "amigos": [],
+    "conteudo": []
+  }
+]

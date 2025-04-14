@@ -11,7 +11,7 @@ const links = {
   base: init,
   login: `${init}/api/login`,
   cad: `${init}/api/cadastrar`,
-  update_perfil: `${init}/api/uploadperfil`,
+  update_perfil: `${init}/api/atualizarfotodeperfil`,
   feed: `${init}/api/feed`,
   token: `${init}/api/validartoken`,
 };
@@ -24,12 +24,10 @@ function App() {
 
   React.useEffect(() => {
     if (local) {
-      console.log(local);
-
       fetch(`${links.token}?token=${local.token}&id=${local.id}`)
         .then((x) => x.json())
         .then((x) => {
-          console.log(x);
+          console.log(x);          
           
           setLog(x.login);
           setInfoUser(x.info);

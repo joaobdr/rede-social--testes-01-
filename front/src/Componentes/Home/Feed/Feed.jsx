@@ -5,8 +5,17 @@ const Feed = ({ user, links }) => {
   const [pag, setPag] = React.useState(1);
   // console.log(user);
 
+  
   React.useEffect(() => {
-    fetch(`${links.feed}?id=${user.id}&token=${123}&pag=${pag}`)
+    const options = {
+      method: 'GET',
+      headers: {
+        id: user.id,
+        token: user.token,
+        pag
+      }
+    };
+    fetch(links.feed, options)
       .then((x) => x.json())
       .then((x) => console.log(x));
   }, []);

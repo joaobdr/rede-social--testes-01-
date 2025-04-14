@@ -3,10 +3,7 @@ import Feed from "./Feed/Feed";
 import style from "./Home.module.css";
 
 const Home = ({ user, links }) => {
-  React.useEffect(() => {
-    localStorage.setItem("usuario", JSON.stringify(user));
-  }, []);
-  console.log(user);
+  React.useEffect(() => localStorage.setItem("usuario", JSON.stringify(user)), []);
 
   return (
     <>
