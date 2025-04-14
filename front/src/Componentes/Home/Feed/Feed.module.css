@@ -1,9 +1,14 @@
-.main{
+.main {
   height: 500px;
 }
 
-.titulo{
+.titulo {
   text-align: center;
   padding: 10px 0;
   font-size: 2rem;
+}
+.section_posts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

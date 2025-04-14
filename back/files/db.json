@@ -26,7 +26,7 @@
             "usuario": "4"
           }
         ],
-        "data_post": "1744000587645",
+        "data_post": "1744000987645",
         "conteudo": "/assets/imgs/public/95706d1a-7706-473a-947e-9d033f95658e.jpg"
       }
     ]
@@ -42,29 +42,47 @@
         "publico": "publico",
         "titulo": "Minhas Ferias",
         "tipo_arq": "img",
-        "likes": "2",
+        "likes": [
+          { "id": 2 },
+          { "id": 4 },
+          { "id": 5 },
+          { "id": 1 },
+          { "id": 7 }
+        ],
         "comentarios": [
           {
             "comentario": "Gostei muito da foto",
             "data": "1744050587645",
-            "likes": "12",
+            "likes": [
+              { "id": 2 },
+              { "id": 4 },
+              { "id": 5 },
+              { "id": 1 },
+              { "id": 7 }
+            ],
             "usuario": "4"
           },
           {
             "comentario": "Gostei muito!!",
             "data": "1744050586545",
-            "likes": "12",
+            "likes": [
+              { "id": 2 },
+              { "id": 4 },
+              { "id": 5 },
+              { "id": 1 },
+              { "id": 7 }
+            ],
             "usuario": "4"
           }
         ],
-        "data_post": "1744000567645",
+        "data_post": "1744636886121",
         "conteudo": "/assets/imgs/public/e631f08d-ef60-4167-9778-c1119f407013.jpg"
       },
       {
         "publico": "publico",
         "titulo": "Minhas Ferias",
         "tipo_arq": "img",
-        "likes": "5",
+        "likes": [],
         "comentarios": [
           {
             "comentario": "Gostei muito da foto",
@@ -89,55 +107,79 @@
     "email": "789",
     "user": "789",
     "senha": "$2b$12$aCGI10dhlgZEvt5QcH7HuO7qouSa5diMmziJ5E3kU489wIT9Buf3K",
-    "foto_perfil": "/assets/imgs/public/1744246206590.jpg",
+    "foto_perfil": "/assets/imgs/public/1744503156537.jpg",
     "conteudo": [
+      {
+        "publico": "publico",
+        "titulo": "Minhas Ferias",
+        "tipo_arq": "img",
+        "likes": [{ "id": 2 }],
+        "comentarios": [
           {
-            "publico": "publico",
-            "titulo": "Minhas Ferias",
-            "tipo_arq": "img",
-            "likes": "2",
-            "comentarios": [
-              {
-                "comentario": "Gostei muito da foto",
-                "data": "1744050587645",
-                "likes": "12",
-                "usuario": "4"
-              },
-              {
-                "comentario": "Gostei muito!!",
-                "data": "1744050586645",
-                "likes": "12",
-                "usuario": "4"
-              }
+            "comentario": "Gostei muito da foto",
+            "data": "1744050587645",
+            "likes": [
+              { "id": 2 },
+              { "id": 4 },
+              { "id": 5 },
+              { "id": 1 },
+              { "id": 7 }
             ],
-            "data_post": "1744000797545",
-            "conteudo": "/assets/imgs/public/1744503285123.jpg"
+            "usuario": "4"
+          },
+          {
+            "comentario": "Gostei muito!!",
+            "data": "1744050586645",
+            "likes": [
+              { "id": 2 },
+              { "id": 4 },
+              { "id": 5 },
+              { "id": 1 },
+              { "id": 7 }
+            ],
+            "usuario": "4"
           }
-        ]
+        ],
+        "data_post": "1741000797545",
+        "conteudo": "/assets/imgs/public/1744503285123.jpg"
+      }
+    ]
   },
   {
     "id": 4,
     "email": "963",
     "user": "963",
     "senha": "$2b$12$y/oYuLyOSTSYhpGKUbtP0uzai0v3eIx8U.0wwkfHMCDjV1IoTkq9C",
-    "foto_perfil": "/assets/imgs/public/1744246272335.jpg",
+    "foto_perfil": "/assets/imgs/public/95706d1a-7706-473a-947e-9d033f95658e.jpg",
     "conteudo": [
       {
         "publico": "publico",
         "titulo": "Minhas Ferias",
         "tipo_arq": "img",
-        "likes": "2",
+        "likes": [{ "id": 5 }, { "id": 1 }, { "id": 7 }],
         "comentarios": [
           {
             "comentario": "Gostei muito da foto",
             "data": "1744050587645",
-            "likes": "12",
+            "likes": [
+              { "id": 2 },
+              { "id": 4 },
+              { "id": 5 },
+              { "id": 1 },
+              { "id": 7 }
+            ],
             "usuario": "4"
           },
           {
             "comentario": "Gostei muito!!",
             "data": "1744050586645",
-            "likes": "12",
+            "likes": [
+              { "id": 2 },
+              { "id": 4 },
+              { "id": 5 },
+              { "id": 1 },
+              { "id": 7 }
+            ],
             "usuario": "4"
           }
         ],

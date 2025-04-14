@@ -6,7 +6,7 @@ import Home from "./Componentes/Home/Home";
 import Header from "./Componentes/Home/Header/Header";
 import Load from "./Componentes/Load/Load";
 
-const init = "http://localhost:3000";
+const init = "https://ominous-train-jj5gjgp6jvjjhwwv-3000.app.github.dev";
 const links = {
   base: init,
   login: `${init}/api/login`,
@@ -27,8 +27,8 @@ function App() {
       fetch(`${links.token}?token=${local.token}&id=${local.id}`)
         .then((x) => x.json())
         .then((x) => {
-          console.log(x);          
-          
+          console.log(x);
+
           setLog(x.login);
           setInfoUser(x.info);
           setLoading(false);
