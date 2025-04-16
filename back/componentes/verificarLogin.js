@@ -1,5 +1,5 @@
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const verificarLogin = async (dados, nomeUsuario, senha, secretKey) => {
   const usuario = dados.find((u) => u.user === nomeUsuario);
@@ -29,4 +29,4 @@ const verificarLogin = async (dados, nomeUsuario, senha, secretKey) => {
   }
 };
 
-export default verificarLogin;
+module.exports = verificarLogin;

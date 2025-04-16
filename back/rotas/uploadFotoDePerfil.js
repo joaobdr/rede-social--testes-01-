@@ -7,7 +7,7 @@ require('dotenv').config();
 
 
 // ********************     COMPONENTES     *************************************
-const { default: verificarLogin } = require('../componentes/verificarLogin');
+const verificarLogin = require('../componentes/verificarLogin');
 
 // *************************   MULTER   *****************************************
 // Configuração do multer

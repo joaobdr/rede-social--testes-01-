@@ -1,5 +1,5 @@
-import fs from "fs/promises";
-import jwt from "jsonwebtoken";
+const fs =require("fs/promises");
+const jwt = require("jsonwebtoken");
 
 const verificarCadastro = async (email, user, senha, secretKey) => {
   const db = JSON.parse(await fs.readFile("files/db.json", "utf8"));
@@ -42,4 +42,4 @@ const verificarCadastro = async (email, user, senha, secretKey) => {
   }
 };
 
-export default verificarCadastro;
+module.export = verificarCadastro;

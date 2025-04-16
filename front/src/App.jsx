@@ -36,6 +36,7 @@ function App() {
         .catch(() => {
           setLog(false);
           setLoading(false);
+          localStorage.removeItem("usuario");
         });
     } else {
       localStorage.removeItem("usuario");

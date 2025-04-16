@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 
   & div {
     width: 170px;

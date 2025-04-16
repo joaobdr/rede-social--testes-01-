@@ -31,26 +31,11 @@ router.get('/feed', async (req, res) => {
     const us = usuarios.find((u) => `${u.id}` === `${decoded.id}`);
     if (!us) return res.status(404).json({ msg: "Usuário não encontrado" });
 
-    // const conteudo = usuarios
-    // .filter(u => us.amigos.includes(`${u.id}`))
-    // .filter(u => u.conteudo && u.conteudo.length > 0)
-    // .flatMap(u =>
-    //   u.conteudo.map(x => ({
-    //     info: {
-    //       ...x,
-    //       senha: undefined,
-    //       email: undefined,
-    //       conteudo: undefined
-    //     },
-    //     conteudo: u.conteudo // ou x, se for apenas o post atual
-    //   }))
-    // );
-    // const dadosOrdenados = conteudo.sort((a, b) => b.data_post - a.data_post);
-
     const teste = [];
-
+    console.log('amigos ==', us.amigos);
+    
     for (let i = 0; i < usuarios.length; i++) {
-      for (let j = 0; j < us.amigos.length; j++) {        
+      for (let j = 0; j < us.amigos.length; j++) {
         const element = us;
         if(element.amigos[j] === `${usuarios[i].id}`){
           for (let k = 0; k < usuarios[i].conteudo.length; k++) {
@@ -64,11 +49,9 @@ router.get('/feed', async (req, res) => {
           conteudo:{
             ...usuarios[i].conteudo[k]
           }})
-            
           }
         }
-      }
-            
+      } 
     }
     const dadosOrdenados = teste.sort((a, b) => b.conteudo.data_post - a.conteudo.data_post);
     

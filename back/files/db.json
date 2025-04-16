@@ -37,6 +37,7 @@
     "user": "456",
     "senha": "$2b$12$KN.l8BcMY1ojexuSOoZ2.eZu/xKiHSrBOuSHitjhUvY57.VgJ7Mbm",
     "foto_perfil": "/assets/imgs/default/default.svg",
+    "amigos": [],
     "conteudo": [
       {
         "publico": "publico",
@@ -108,6 +109,7 @@
     "user": "789",
     "senha": "$2b$12$aCGI10dhlgZEvt5QcH7HuO7qouSa5diMmziJ5E3kU489wIT9Buf3K",
     "foto_perfil": "/assets/imgs/public/1744503156537.jpg",
+    "amigos": [],
     "conteudo": [
       {
         "publico": "publico",
@@ -151,6 +153,7 @@
     "user": "963",
     "senha": "$2b$12$y/oYuLyOSTSYhpGKUbtP0uzai0v3eIx8U.0wwkfHMCDjV1IoTkq9C",
     "foto_perfil": "/assets/imgs/public/95706d1a-7706-473a-947e-9d033f95658e.jpg",
+    "amigos": [],
     "conteudo": [
       {
         "publico": "publico",

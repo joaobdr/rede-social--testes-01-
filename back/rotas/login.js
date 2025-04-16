@@ -3,7 +3,7 @@ const router = express.Router();
 const fs = require("fs");
 
 // **********************   COMPONENTES   *************************************
-const { default: verificarLogin } = require('../componentes/verificarLogin');
+const  verificarLogin = require('../componentes/verificarLogin');
 
 // **********************   CONFIGURAÇÕES   *************************************
 require('dotenv').config();

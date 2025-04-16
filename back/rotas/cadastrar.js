@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const router = express.Router();
 
 // **********************    COMPONENTES    *************************************
-const { default: verificarCadastro } = require('../componentes/verificarCadastro');
+const verificarCadastro = require('../componentes/verificarCadastro');
 
 // **********************   CONFIGURAÇÕES   *************************************
 require('dotenv').config();
